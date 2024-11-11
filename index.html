@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        /* Gambar latar belakang */
+        
         .bg-cover {
             background-image: url('https://www.itera.ac.id/wp-content/uploads/2015/03/gm2-1024x682-1-1024x682.jpg');
             background-position: center;
@@ -24,7 +24,6 @@
             animation: blink 1s step-end infinite;
         }
 
-        /* Optional: Blinking cursor effect */
         @keyframes blink {
             50% {
                 background-color: transparent;
@@ -37,16 +36,16 @@
         <div class="relative bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl">
             <div class="flex flex-col md:flex-row">
                 <div class="bg-blue-800 p-8 md:w-2/3 relative">
-                    <!-- Animated title and description -->
+                   
                     <h1 id="title" class="text-white text-3xl font-bold"></h1>
                     <p id="description" class="text-white text-lg mb-4"></p>
 
                     <div class="text-white space-y-2">
                         <p class="animate__animated animate__fadeIn animate__delay-1s">
-                            <i class="fas fa-envelope mr-2"></i> email@mailprovider.com
+                            <i class="fas fa-envelope mr-2"></i> islahul.122230082@student.itera.ac.id
                         </p>
                         <p class="animate__animated animate__fadeIn animate__delay-2s">
-                            <i class="fas fa-graduation-cap mr-2"></i> NIM: 121140021
+                            <i class="fas fa-graduation-cap mr-2"></i> NIM: 122230082
                         </p>
                         <p class="animate__animated animate__fadeIn animate__delay-3s">
                             <i class="fas fa-cogs mr-2"></i> Keahlian: LOREM
@@ -60,13 +59,13 @@
                     </div>
                     
                     <div class="flex space-x-6 mt-6">
-                        <!-- WhatsApp Icon -->
+                    
                         <a class="text-white text-3xl hover:text-green-500 transform transition-colors duration-300" href="https://wa.me/6285267415723" target="_blank">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                         
                         
-                        <!-- Instagram Icon -->
+                      
                         <a class="text-white text-3xl hover:text-pink-500 transform transition-colors duration-300" href="https://www.instagram.com/islhul_mustfa/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
@@ -76,10 +75,10 @@
                     
                 </div>
 
-                <!-- Gambar Profil dengan ukuran relatif dan responsif -->
+               
                 <div class="md:w-1/3 w-full h-96 md:h-auto">
-                    <!-- Gambar Profil yang responsif -->
-                    <img alt="Profile picture" class="w-full h-full object-cover" src="WhatsApp Image 2024-02-21 at 09.54.11_87ad74ff.jpg"/>
+                   
+                    <img alt="Profile picture" class="w-full h-full object-cover" src="MAUL.jpg"/>
                 </div>
                 
             </div>
@@ -97,32 +96,32 @@
         document.addEventListener("DOMContentLoaded", async function() {
             // Start TypeIt animation for the name (title)
             const titleTypeIt = new TypeIt("#title", {
-                strings: ["ISLAHUL MUSTOFA"],  // The name text to animate
-                speed: 100,                   // Speed of typing
-                waitUntilVisible: true,        // Wait until element is visible
-                cursor: true,                 // Enable cursor during typing
+                strings: ["ISLAHUL MUSTOFA"],  
+                speed: 100,                   
+                waitUntilVisible: true,        
+                cursor: true,                 
                 afterComplete: () => {
-                    // After name animation completes, remove the cursor from the element
+                   
                     document.querySelector("#title").classList.remove("typeit-cursor");
                 }
             });
 
             // Start typing the name
-            await titleTypeIt.go();  // Use await to wait until the name is typed
+            await titleTypeIt.go();  
 
-            // Start TypeIt animation for the description (jurusan)
+         
             const descriptionTypeIt = new TypeIt("#description", {
-                strings: ["Teknik Geomatika"],  // The jurusan text to animate
-                speed: 100,                    // Speed of typing
-                waitUntilVisible: true,         // Wait until element is visible
-                cursor: true,                  // Enable cursor during typing
+                strings: ["Teknik Geomatika"],  
+                speed: 100,                    
+                waitUntilVisible: true,        
+                cursor: true,                  
                 afterComplete: () => {
-                    // After description animation completes, remove the cursor from the element
+                    
                     document.querySelector("#description").classList.remove("typeit-cursor");
                 }
             });
 
-            // Start typing the description after name is typed
+            
             await descriptionTypeIt.go();
         });
     </script>
