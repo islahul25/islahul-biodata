@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        
+        /* Gambar latar belakang */
         .bg-cover {
             background-image: url('https://www.itera.ac.id/wp-content/uploads/2015/03/gm2-1024x682-1-1024x682.jpg');
             background-position: center;
@@ -24,6 +24,7 @@
             animation: blink 1s step-end infinite;
         }
 
+        /* Optional: Blinking cursor effect */
         @keyframes blink {
             50% {
                 background-color: transparent;
@@ -35,57 +36,57 @@
     <div class="flex items-center justify-center min-h-screen p-4 bg-opacity-70 bg-black">
         <div class="relative bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-4xl">
             <div class="flex flex-col md:flex-row">
-                <div class="bg-blue-800 p-8 md:w-2/3 relative">
-                   
+                <div class="bg-purple-950 p-8 md:w-2/3 relative">
+                    <!-- Animated title and description -->
                     <h1 id="title" class="text-white text-3xl font-bold"></h1>
                     <p id="description" class="text-white text-lg mb-4"></p>
-
+    
                     <div class="text-white space-y-2">
-                        <p class="animate__animated animate__fadeIn animate__delay-1s">
-                            <i class="fas fa-envelope mr-2"></i> islahul.122230082@student.itera.ac.id
+                        <p class="animate__animated animate__fadeIn animate__delay-1s flex items-center">
+                            <i class="fas fa-envelope mr-2.5"></i> islahul.122230082@student.itera.ac.id
                         </p>
-                        <p class="animate__animated animate__fadeIn animate__delay-2s">
-                            <i class="fas fa-graduation-cap mr-2"></i> NIM: 122230082
+                        <p class="animate__animated animate__fadeIn animate__delay-2s flex items-center">
+                            <i class="fas fa-graduation-cap mr-1"></i> 122230082
                         </p>
-                        <p class="animate__animated animate__fadeIn animate__delay-3s">
-                            <i class="fas fa-cogs mr-2"></i> Keahlian: LOREM
+                        <p class="animate__animated animate__fadeIn animate__delay-3s flex items-center">
+                            <i class="fas fa-motorcycle mr-1.5"></i> Jalan-Jalan
                         </p>
-                        <!-- <p class="animate__animated animate__fadeIn animate__delay-4s">
-                            <i class="fas fa-phone mr-2"></i> WA: 09999
-                        </p> -->
-                        <p class="animate__animated animate__fadeIn animate__delay-5s">
-                            <i class="fas fa-map-marker-alt mr-2"></i> Bandar Lampung
+                        <p class="animate__animated animate__fadeIn animate__delay-4s flex items-center">
+                            <i class="fas fa-calendar-alt mr-3"></i> Yukum Jaya, 25 Juli 2003
                         </p>
+                        <p class="animate__animated animate__fadeIn animate__delay-5s flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3"></i> Lampung Tengah
+                        </p>
+                        
                     </div>
-                    
-                    <div class="flex space-x-6 mt-6">
-                    
-                        <a class="text-white text-3xl hover:text-green-500 transform transition-colors duration-300" href="https://wa.me/6285267415723" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        
-                        
-                      
-                        <a class="text-white text-3xl hover:text-pink-500 transform transition-colors duration-300" href="https://www.instagram.com/islhul_mustfa/" target="_blank">
+    
+                    <!-- Ikon Sosial Media di Pojok Kiri Bawah -->
+                    <div class="absolute bottom-4 left-4 flex space-x-4">
+                        <!-- Instagram Icon -->
+                        <a class="text-white text-4xl hover:text-pink-500 transform transition-transform duration-300 hover:scale-110" href="https://www.instagram.com/islhul_mustfa/" target="_blank">
                             <i class="fab fa-instagram"></i>
                         </a>
+    
                         
+    
+                        <!-- WhatsApp Icon -->
+                        <a class="text-white text-4xl hover:text-green-500 transform transition-transform duration-300 hover:scale-110" href="https://wa.me/6285267415723" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
-                    
-                    
+    
                 </div>
-
-               
+    
+                <!-- Gambar Profil dengan ukuran relatif dan responsif -->
                 <div class="md:w-1/3 w-full h-96 md:h-auto">
-                   
-                    <img alt="Profile picture" class="w-full h-full object-cover" src="MAUL.jpg"/>
+                    <img alt="Profile picture" class="w-full h-full object-cover" src="Islahul.jpg"/>
                 </div>
-                
             </div>
         </div>
     </div>
+    
 
-    <footer class="bg-gray-800 text-white py-4 mt-8">
+    <footer class="bg-gray-800 text-white py-4">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 Islahul Mustofa. All rights reserved.</p>
             <p>Designed by Islahul Mustofa</p>
@@ -96,32 +97,32 @@
         document.addEventListener("DOMContentLoaded", async function() {
             // Start TypeIt animation for the name (title)
             const titleTypeIt = new TypeIt("#title", {
-                strings: ["ISLAHUL MUSTOFA"],  
-                speed: 100,                   
-                waitUntilVisible: true,        
-                cursor: true,                 
+                strings: ["ISLAHUL MUSTOFA"],  // The name text to animate
+                speed: 100,                   // Speed of typing
+                waitUntilVisible: true,        // Wait until element is visible
+                cursor: false,                 // Enable cursor during typing
                 afterComplete: () => {
-                   
+                    // After name animation completes, remove the cursor from the element
                     document.querySelector("#title").classList.remove("typeit-cursor");
                 }
             });
 
             // Start typing the name
-            await titleTypeIt.go();  
+            await titleTypeIt.go();  // Use await to wait until the name is typed
 
-         
+            // Start TypeIt animation for the description (jurusan)
             const descriptionTypeIt = new TypeIt("#description", {
-                strings: ["Teknik Geomatika"],  
-                speed: 100,                    
-                waitUntilVisible: true,        
-                cursor: true,                  
+                strings: ["Teknik Geomatika"],  // The jurusan text to animate
+                speed: 100,                    // Speed of typing
+                waitUntilVisible: true,         // Wait until element is visible
+                cursor: false,                  // Enable cursor during typing
                 afterComplete: () => {
-                    
+                    // After description animation completes, remove the cursor from the element
                     document.querySelector("#description").classList.remove("typeit-cursor");
                 }
             });
 
-            
+            // Start typing the description after name is typed
             await descriptionTypeIt.go();
         });
     </script>
